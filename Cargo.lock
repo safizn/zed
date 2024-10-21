@@ -11921,6 +11921,7 @@ dependencies = [
  "project",
  "recent_projects",
  "remote",
+ "repl",
  "rpc",
  "serde",
  "settings",
