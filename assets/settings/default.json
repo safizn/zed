@@ -392,7 +392,24 @@
     "auto_reveal_entries": true,
     /// Whether to fold directories automatically
     /// when a directory has only one directory inside.
-    "auto_fold_dirs": true
+    "auto_fold_dirs": true,
+    /// Scrollbar-related settings
+    "scrollbar": {
+      /// When to show the scrollbar in the project panel.
+      /// This setting can take four values:
+      ///
+      /// 1. null (default): Inherit editor settings
+      /// 2. Show the scrollbar if there's important information or
+      ///    follow the system's configured behavior (default):
+      ///   "auto"
+      /// 3. Match the system's configured behavior:
+      ///    "system"
+      /// 4. Always show the scrollbar:
+      ///    "always"
+      /// 5. Never show the scrollbar:
+      ///    "never"
+      "show": null
+    }
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.

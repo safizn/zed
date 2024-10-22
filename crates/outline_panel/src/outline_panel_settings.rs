@@ -1,3 +1,4 @@
+use editor::ShowScrollbar;
 use gpui::Pixels;
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
@@ -21,6 +22,23 @@ pub struct OutlinePanelSettings {
     pub indent_size: f32,
     pub auto_reveal_entries: bool,
     pub auto_fold_dirs: bool,
+    pub scrollbar: ScrollbarSettings,
+}
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, JsonSchema, PartialEq, Eq)]
+pub struct ScrollbarSettings {
+    /// When to show the scrollbar in the project panel.
+    ///
+    /// Default: inherits editor scrollbar settings
+    pub show: Option<ShowScrollbar>,
+}
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, JsonSchema, PartialEq, Eq)]
+pub struct ScrollbarSettingsContent {
+    /// When to show the scrollbar in the project panel.
+    ///
+    /// Default: inherits editor scrollbar settings
+    pub show: Option<Option<ShowScrollbar>>,
 }
 
 #[derive(Clone, Default, Serialize, Deserialize, JsonSchema, Debug)]
@@ -64,6 +82,8 @@ pub struct OutlinePanelSettingsContent {
     ///
     /// Default: true
     pub auto_fold_dirs: Option<bool>,
+    /// Scrollbar-related settings
+    pub scrollbar: Option<ScrollbarSettingsContent>,
 }
 
 impl Settings for OutlinePanelSettings {

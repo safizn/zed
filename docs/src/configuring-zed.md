@@ -2198,6 +2198,9 @@ Run the `theme selector: toggle` action in the command palette to see a current 
   "indent_size": 20,
   "auto_reveal_entries": true,
   "auto_fold_dirs": true,
+  "scrollbar": {
+    "show": null
+  }
 }
 ```
 
